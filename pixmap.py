@@ -178,7 +178,11 @@ class Neurometrics(Resource):
                                     "c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14","c15","c16","c17","c18","c19","c20",
                                     "c21","c22","c23","c24","c25"])
 
-        
+        #Aca se coloca exactamente lo mismo que lo que probe
+        #en local, es decir, se agrega el pickle
+        #luego se normaliza y finalmente se usa
+        #el prefict, eso se manda al API
+
         response = jsonify({"text_area_over_image": text_area_over_image,
                             "text_area_over_saliency": perc_white_pix_over_text,
                             "per_enhance": perc_enhance,

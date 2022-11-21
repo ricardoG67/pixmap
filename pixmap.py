@@ -108,6 +108,77 @@ class Neurometrics(Resource):
         ##########################################
         dominant_colors = neurometrics_lab.dominant_colors(img_np)
         
+        ##########################################
+        ## CTR PREDICTION
+        ##########################################
+        sift_fast = neurometric_lab.sift_n_fast(img_np)
+
+        c1 = kp_sift[0]
+        c2 = kp_sift[1]
+        c3 = kp_sift[2]
+        c4 = kp_sift[3]
+        c5 = kp_sift[4]
+        c6 = kp_sift[5]
+        c7 = kp_sift[6]
+        c8 = kp_sift[7]
+        c9 = kp_sift[8]
+        c10 =kp_sift[9]
+        c11 =kp_sift[10]
+        c12 =kp_sift[11]
+        c13 =kp_sift[12]
+        c14= kp_sift[13]
+        c15 =kp_sift[14]
+        c16= kp_sift[15]
+        c17= kp_sift[16]
+        c18= kp_sift[17]
+        c19= kp_sift[18]
+        c20= kp_sift[19]
+        c21= kp_sift[20]
+        c22= kp_sift[21]
+        c23= kp_sift[22]
+        c24= kp_sift[23]
+        c25= kp_sift[24]
+
+
+        c1_fast = kp_fast[0]
+        c2_fast = kp_fast[1]
+        c3_fast = kp_fast[2]
+        c4_fast = kp_fast[3]
+        c5_fast = kp_fast[4]
+        c6_fast = kp_fast[5]
+        c7_fast = kp_fast[6]
+        c8_fast = kp_fast[7]
+        c9_fast = kp_fast[8]
+        c10_fast = kp_fast[9]
+        c11_fast = kp_fast[10]
+        c12_fast = kp_fast[11]
+        c13_fast = kp_fast[12]
+        c14_fast= kp_fast[13]
+        c15_fast = kp_fast[14]
+        c16_fast= kp_fast[15]
+        c17_fast= kp_fast[16]
+        c18_fast= kp_fast[17]
+        c19_fast= kp_fast[18]
+        c20_fast= kp_fast[19]
+        c21_fast= kp_fast[20]
+        c22_fast= kp_fast[21]
+        c23_fast= kp_fast[22]
+        c24_fast= kp_fast[23]
+        c25_fast= kp_fast[24]
+
+        tabla = []
+        tabla.append([c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,
+        c1_fast,c2_fast,c3_fast, c4_fast, c5_fast, c6_fast, c7_fast, c8_fast, c9_fast, c10_fast,c11_fast,c12_fast, 
+        c13_fast, c14_fast, c15_fast, c16_fast,c17_fast,c18_fast,c19_fast, c20_fast, c21_fast, c22_fast, c23_fast, c24_fast, c25_fast])
+        
+        df = pd.DataFrame(tabla, columns=["c1_sift", "c2_sift", "c3_sift", "c4_sift", "c5_sift", "c6_sift", "c7_sift", "c8_sift", "c9_sift",
+                                    "c10_sift", "c11_sift", "c12_sift", "c13_sift", "c14_sift", "c15_sift", "c16_sift",
+                                    "c17_sift", "c18_sift", "c19_sift", "c20_sift", "c21_sift", "c22_sift", "c23_sift", "c24_sift", "c25_sift",
+
+                                    "c1","c2","c3","c4","c5","c6","c7","c8","c9","c10","c11","c12","c13","c14","c15","c16","c17","c18","c19","c20",
+                                    "c21","c22","c23","c24","c25"])
+
+        
         response = jsonify({"text_area_over_image": text_area_over_image,
                             "text_area_over_saliency": perc_white_pix_over_text,
                             "per_enhance": perc_enhance,
